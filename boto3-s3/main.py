@@ -9,8 +9,7 @@ def list_buckets():
     """
     s3 = boto3.client('s3')
     response = s3.list_buckets()
-
-    print('Existing buckets:')
+    
     for bucket in response['Buckets']:
         print(f'  {bucket["Name"]}')
         
@@ -138,33 +137,44 @@ def delete_bucket(bucket_name):
         return False
     
 def main():
-    bucket_name = 'test-boto3-da'
+    bucket_name = 'test-boto3-dave'
     object_key = 'test.txt'
     region = 'us-west-2'
     files_path = 'aws-re-start-python/boto3-s3'
     file1 = '/test.txt'
     file2 = '/main.py'
     
+    print('-------------------------------------[List buckets]')
     list_buckets()
     
-    create_bucket(bucket_name, region)
-    
+    print(f'-------------------------------------[Create bucket: {bucket_name}]')
+    if create_bucket(bucket_name, region):
+        print(f'Bucket: {bucket_name} was created succesfully.')
+        
+    print('-------------------------------------[List buckets]')
     list_buckets()
     
-    upload_file(files_path + file1, bucket_name)
-    
-    upload_file(files_path + file2, bucket_name)
-    
+    print(f'-------------------------------------[Upload file: {file1} to bucket: {bucket_name}]')
+    if upload_file(files_path + file1, bucket_name):
+        print(f'File {file1} succesfully uploaded!')
+        
+    print(f'-------------------------------------[Upload file: {file2} to bucket: {bucket_name}]')
+    if upload_file(files_path + file2, bucket_name):
+        print(f'File {file2} succesfully uploaded!')
+        
+    print(f'-------------------------------------[List content of bucket: {bucket_name}]')
     list_bucket_content(bucket_name)
     
+    print(f'-------------------------------------[Print file content {object_key}]')
     file_content = read_file_from_s3(bucket_name, object_key)
     if file_content is not None:
         print(f'File content:\n{file_content}')
-    
-    
-    # delete_file_from_s3(bucket_name, object_key)
         
-    # delete_bucket(bucket_name)
+    print(f'-------------------------------------[Delete file: {object_key} from bucket: {bucket_name}]')
+    delete_file_from_s3(bucket_name, object_key)
+    
+    print(f'-------------------------------------[Delete bucket: {bucket_name}]')
+    delete_bucket(bucket_name)
     
 if __name__ == '__main__':
     main()
