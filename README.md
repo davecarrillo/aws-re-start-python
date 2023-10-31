@@ -11,5 +11,3 @@ Se concede permiso, de forma gratuita, a cualquier persona que obtenga una copia
 El aviso de copyright anterior y este aviso de permiso se incluirán en todas las copias o partes sustanciales del Software.
 
 EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO, EXPRESA O IMPLÍCITA, INCLUYENDO PERO NO LIMITADO A LAS GARANTÍAS DE COMERCIABILIDAD, IDONEIDAD PARA UN PROPÓSITO PARTICULAR Y NO INFRACCIÓN. EN NINGÚN CASO LOS AUTORES O TITULARES DE DERECHOS DE AUTOR SERÁN RESPONSABLES DE CUALQUIER RECLAMO, DAÑO U OTRA RESPONSABILIDAD, YA SEA EN UNA ACCIÓN DE CONTRATO, AGRAVIO O CUALQUIER OTRO MOTIVO, DERIVADOS DE, FUERA DE O EN RELACIÓN CON EL SOFTWARE O EL USO U OTRO TIPO DE TRATAMIENTO EN EL SOFTWARE.
-
-[Opcional: Incluye cualquier otra sección adicional o términos específicos que desees agregar]
